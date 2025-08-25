@@ -10,11 +10,11 @@ private const val TAG: String = "The phone number transformation"
 
 class PhoneNumberTransformation : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
-        return this.phoneNumberFilter(text)
+        return phoneNumberFilter(text)
     }
 }
 
-fun PhoneNumberTransformation.trimmed(text: String) : String {
+fun trimmed(text: String) : String {
     val trimmed = if (text.length >= 10) text.substring(0..9) else text
     return trimmed
 }
@@ -23,11 +23,11 @@ fun PhoneNumberTransformation.trimmed(text: String) : String {
  * Plain function to create phone number transformation for the visual transformation of the
  * phone number.
  */
-fun PhoneNumberTransformation.phoneNumberFilter(text: AnnotatedString): TransformedText {
+fun phoneNumberFilter(text: AnnotatedString): TransformedText {
 
     // The making of the +1 (XXX) XXX-XXXX
 
-    val trimmed = this.trimmed(text.text)
+    val trimmed = trimmed(text.text)
 
 //    var out = "" // The transformed value to build
     var out = if (trimmed.isNotEmpty()) "+1 (" else ""

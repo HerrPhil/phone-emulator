@@ -1,6 +1,5 @@
 package com.phone.emulator
 
-import com.phone.emulator.ui.transformation.PhoneNumberTransformation
 import com.phone.emulator.ui.transformation.trimmed
 import org.junit.Test
 
@@ -16,21 +15,21 @@ class TrimmedUnitTest {
     @Test
     fun check_length_under_ten_is_not_trimmed() {
         val expected = "xyz"
-        val actual = PhoneNumberTransformation().trimmed("xyz")
+        val actual = trimmed("xyz")
         assertEquals(expected, actual)
     }
 
     @Test
     fun check_length_ten_is_not_trimmed() {
         val expected = "abcdefghij"
-        val actual = PhoneNumberTransformation().trimmed("abcdefghij")
+        val actual = trimmed("abcdefghij")
         assertEquals(expected, actual)
     }
 
     @Test
     fun check_length_over_ten_is_trimmed() {
         val expected = "abcdefghij"
-        val actual = PhoneNumberTransformation().trimmed("abcdefghijz")
+        val actual = trimmed("abcdefghijz")
         assertEquals(expected, actual)
     }
 }
