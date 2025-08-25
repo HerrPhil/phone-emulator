@@ -144,7 +144,7 @@ fun PhoneNumberValue(
     val focusRequester = remember { FocusRequester() }
 
     Column(
-        modifier = modifier.focusRequester(focusRequester)
+        modifier = modifier
     ) {
 
         TextField(
