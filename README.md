@@ -10,13 +10,13 @@ Then I had an idea. I wanted to see if I can write a phone app that only uses Wi
 
 However that is not possible by design.
 
-"""
-While you can programmatically open the dialer with a specific number using Intent.ACTION_DIAL and
-a tel: URI, this still requires user interaction to complete the call. The CALL_PRIVILEGED
-permission, which would theoretically allow direct calling, is restricted to system applications and
-cannot be granted to third-party apps. Therefore, any implementation in Jetpack Compose must follow
-this limitation and cannot bypass the dialer interface for emergency numbers.
-"""
+
+>While you can programmatically open the dialer with a specific number using Intent.ACTION_DIAL and
+>a tel: URI, this still requires user interaction to complete the call. The CALL_PRIVILEGED
+>permission, which would theoretically allow direct calling, is restricted to system applications and
+>cannot be granted to third-party apps. Therefore, any implementation in Jetpack Compose must follow
+>this limitation and cannot bypass the dialer interface for emergency numbers.
+
 
 As a consolation prize, I figured out how to configure a text field to allow a valid phone number
 to be entered.
